@@ -42,13 +42,6 @@ hystrix:
       metrics.rollingStats.timeInMilliseconds: 10000
       circuitBreaker.sleepWindowInMilliseconds: 5000
 
-logging:
-  level:
-    com.netflix.hystrix: debug
-    org.apache.http.impl: debug
-    com.jpetstore.jpetstore: debug
-    feign: debug
-
 management:
   endpoint:
     env:
