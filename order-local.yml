@@ -26,6 +26,10 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: full
+  httpclient:
+    enabled: true
+    maxConnections: 200
+    maxConnectionsPerRoute: 100
   hystrix:
     enabled: true
 

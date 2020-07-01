@@ -32,6 +32,8 @@ feign:
         loggerLevel: FULL
   httpclient:
     enabled: true
+    maxConnections: 200
+    maxConnectionsPerRoute: 100
   hystrix:
     enabled: true
   
