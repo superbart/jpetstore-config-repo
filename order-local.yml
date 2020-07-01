@@ -30,6 +30,7 @@ feign:
     enabled: true
     maxConnections: 200
     maxConnectionsPerRoute: 100
+    connectionTimerRepeat: 30000
   hystrix:
     enabled: true
 
