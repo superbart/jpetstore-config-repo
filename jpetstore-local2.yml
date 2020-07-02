@@ -53,7 +53,7 @@ catalog-api:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/
+      defaultZone: http://localhost:8761/eureka/
 
 hystrix:
   command:
