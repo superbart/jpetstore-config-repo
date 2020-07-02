@@ -37,7 +37,19 @@ feign:
     connectionTimerRepeat: 30000
   hystrix:
     enabled: true
-  
+
+order-api:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:16061,localhost:16062
+
+catalog-api:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:17071,localhost:17072
+
 hystrix:
   command:
     default:
@@ -55,6 +67,3 @@ management:
     web:
       exposure:
         include: health,info,env,metrics,refresh,bus-refresh
-
-order.service.url: http://localhost:16061
-product.service.url: http://localhost:17071

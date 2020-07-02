@@ -34,6 +34,12 @@ feign:
   hystrix:
     enabled: true
 
+catalog-api:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:17071,localhost:17072
+
 hystrix:
   command:
     default:
@@ -51,5 +57,3 @@ management:
     web:
       exposure:
         include: health,info,env,metrics,refresh,bus-refresh
-
-product.service.url: http://localhost:16062
