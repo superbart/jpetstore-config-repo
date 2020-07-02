@@ -34,11 +34,11 @@ feign:
   hystrix:
     enabled: true
 
-catalog-api:
+PRODUCT:
   ribbon:
     eureka:
-      enabled: false
-    listOfServers: localhost:17071,localhost:17072
+      enabled: true
+#    listOfServers: localhost:17071,localhost:17072
 
 eureka:
   client:
