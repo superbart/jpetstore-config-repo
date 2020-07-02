@@ -27,3 +27,8 @@ spring:
     password: qwer1234
     port: 5672
     username: jpetstore
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/
