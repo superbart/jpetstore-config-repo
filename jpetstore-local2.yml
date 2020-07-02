@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
     
 spring:
   datasource:
@@ -57,4 +57,4 @@ management:
         include: health,info,env,metrics,refresh,bus-refresh
 
 order.service.url: http://localhost:16061
-product.service.url: http://localhost:17071
+product.service.url: http://localhost:16062

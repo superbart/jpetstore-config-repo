@@ -1,6 +1,6 @@
 server:
-  port: 8080
-    
+  port: 16062
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
@@ -11,12 +11,8 @@ spring:
       minimumIdle: 5
       validation-timeout: 10000
     password: qwer1234
-    url: jdbc:mariadb://localhost:13306/jpetstoredb
-    username: jpetstore
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+    url: jdbc:mariadb://localhost:23306/orderdb
+    username: order
   rabbitmq:
     host: localhost
     password: qwer1234
@@ -25,11 +21,11 @@ spring:
 
 feign:
   client:
-    config:
-      default:
+    config: 
+      catalog-api:
         connectTimeout: 5000
-        readTimeout: 2000
-        loggerLevel: FULL
+        readTimeout: 5000
+        loggerLevel: full
   httpclient:
     enabled: true
     maxConnections: 200
@@ -37,7 +33,7 @@ feign:
     connectionTimerRepeat: 30000
   hystrix:
     enabled: true
-  
+
 hystrix:
   command:
     default:
@@ -56,5 +52,4 @@ management:
       exposure:
         include: health,info,env,metrics,refresh,bus-refresh
 
-order.service.url: http://localhost:16061
-product.service.url: http://localhost:17071
+product.service.url: http://localhost:16062
