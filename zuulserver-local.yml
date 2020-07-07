@@ -13,6 +13,8 @@ feign:
     maxConnections: 200
     maxConnectionsPerRoute: 100
     connectionTimerRepeat: 30000
+  hystrix:
+    enabled: true
 
 jpetstore:
   ribbon:
@@ -29,6 +31,15 @@ zuul:
     jpetstore:
       path: /**
       stripPrefix: false
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 500
+      circuitBreaker.errorThresholdPercentage: 50
+      circuitBreaker.requestVolumeThreshold: 2
+      metrics.rollingStats.timeInMilliseconds: 10000
+      circuitBreaker.sleepWindowInMilliseconds: 5000
 
 management:
   endpoint:
