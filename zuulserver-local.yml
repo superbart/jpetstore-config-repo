@@ -35,7 +35,7 @@ zuul:
 hystrix:
   command:
     default:
-      execution.isolation.thread.timeoutInMilliseconds: 500
+      execution.isolation.thread.timeoutInMilliseconds: 5000
       circuitBreaker.errorThresholdPercentage: 50
       circuitBreaker.requestVolumeThreshold: 2
       metrics.rollingStats.timeInMilliseconds: 10000
