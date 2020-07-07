@@ -14,6 +14,11 @@ feign:
     maxConnectionsPerRoute: 100
     connectionTimerRepeat: 30000
 
+JPETSTORE:
+  ribbon:
+    eureka:
+      enabled: true
+
 eureka:
   client:
     serviceUrl:
