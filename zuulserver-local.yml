@@ -16,11 +16,11 @@ feign:
   hystrix:
     enabled: true
 
-jpetstore:
-  ribbon:
-    eureka:
-      enabled: true
-
+#jpetstore:
+#  ribbon:
+#    eureka:
+#      enabled: true
+#
 eureka:
   client:
     serviceUrl:
