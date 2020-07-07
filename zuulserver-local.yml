@@ -14,7 +14,7 @@ feign:
     maxConnectionsPerRoute: 100
     connectionTimerRepeat: 30000
 
-JPETSTORE:
+jpetstore:
   ribbon:
     eureka:
       enabled: true
@@ -26,7 +26,7 @@ eureka:
 
 zuul:
   routes:
-    JPETSTORE:
+    jpetstore:
       path: /**
       stripPrefix: false
 
