@@ -26,6 +26,24 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
 
+zuul:
+  routes:
+    jpetstore:
+      path: /**
+      stripPrefix: false
+    product_categories:
+      path: /categories/**
+      stripPrefix: false
+      serviceId: product
+    product_products:
+      path: /products/**
+      stripPrefix: false
+      serviceId: product
+    product_items:
+      path: /items/**
+      stripPrefix: false
+      serviceId: product
+
 hystrix:
   command:
     default:
