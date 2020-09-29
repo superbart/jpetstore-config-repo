@@ -1,0 +1,9 @@
+server:
+  port: ${EUREKA_PORT}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${OTHER_EUREKA_URI}/eureka/
+      registerWithEureka: false
+      fetchRegistry: false
