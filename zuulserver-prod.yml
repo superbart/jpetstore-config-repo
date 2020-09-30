@@ -22,6 +22,8 @@ feign:
 #      enabled: true
 #
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULTZONE}

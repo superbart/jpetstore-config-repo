@@ -41,6 +41,8 @@ PRODUCT:
 #    listOfServers: localhost:17071,localhost:17072
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     serviceUrl:
       defaultZone: ${EUREKA_DEFAULTZONE}
