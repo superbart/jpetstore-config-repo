@@ -1,0 +1,64 @@
+server:
+  port: ${ZUUL_PORT}
+    
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 2000
+        loggerLevel: FULL
+  httpclient:
+    enabled: true
+    maxConnections: 200
+    maxConnectionsPerRoute: 100
+    connectionTimerRepeat: 30000
+  hystrix:
+    enabled: true
+
+#jpetstore:
+#  ribbon:
+#    eureka:
+#      enabled: true
+#
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULTZONE}
+
+zuul:
+  routes:
+    jpetstore:
+      path: /**
+      stripPrefix: false
+      sensitiveHeaders: 
+    product_categories:
+      path: /categories/**
+      stripPrefix: false
+      serviceId: product
+    product_products:
+      path: /products/**
+      stripPrefix: false
+      serviceId: product
+    product_items:
+      path: /items/**
+      stripPrefix: false
+      serviceId: product
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 5000
+      circuitBreaker.errorThresholdPercentage: 50
+      circuitBreaker.requestVolumeThreshold: 2
+      metrics.rollingStats.timeInMilliseconds: 10000
+      circuitBreaker.sleepWindowInMilliseconds: 5000
+
+management:
+  endpoint:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics,refresh,bus-refresh
