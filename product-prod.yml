@@ -20,8 +20,8 @@ spring:
       minimumIdle: 5
       validation-timeout: 10000
     url: ${DATASOURCE_URL}
-    username: ${DB_USER_ID}
-    password: ${DB_USER_PASSWORD}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
