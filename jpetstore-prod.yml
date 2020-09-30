@@ -1,0 +1,74 @@
+server:
+  port: ${JPETSTORE_PORT}
+    
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      connection-timeout: 10000
+      idleTimeout: 10000
+      maximumPoolSize: 10
+      minimumIdle: 5
+      validation-timeout: 10000
+    url: ${DATASOURCE_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 2000
+        loggerLevel: FULL
+  httpclient:
+    enabled: true
+    maxConnections: 200
+    maxConnectionsPerRoute: 100
+    connectionTimerRepeat: 30000
+  hystrix:
+    enabled: true
+
+ORDER:
+  ribbon:
+    eureka:
+      enabled: true
+#    listOfServers: localhost:16061,localhost:16062
+
+PRODUCT:
+  ribbon:
+    eureka:
+      enabled: true
+#    listOfServers: localhost:17071,localhost:17072
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULTZONE}
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 500
+      circuitBreaker.errorThresholdPercentage: 50
+      circuitBreaker.requestVolumeThreshold: 2
+      metrics.rollingStats.timeInMilliseconds: 10000
+      circuitBreaker.sleepWindowInMilliseconds: 5000
+
+management:
+  endpoint:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics,refresh,bus-refresh
