@@ -18,6 +18,10 @@ zuul:
       path: /items/**
       stripPrefix: false
       serviceId: product
+    order_orders:
+      path: /orders/**
+      stripPrefix: false
+      serviceId: order
 hystrix:
   command:
     default:
