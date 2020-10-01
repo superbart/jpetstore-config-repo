@@ -1,37 +1,16 @@
 server:
   port: 8080
-    
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 2000
-        loggerLevel: FULL
-  httpclient:
-    enabled: true
-    maxConnections: 200
-    maxConnectionsPerRoute: 100
-    connectionTimerRepeat: 30000
-  hystrix:
-    enabled: true
-
-#jpetstore:
-#  ribbon:
-#    eureka:
-#      enabled: true
-#
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
-
 zuul:
   routes:
     jpetstore:
       path: /**
       stripPrefix: false
       sensitiveHeaders: 
+    jpetstore_order:
+      path: /order/**
+      stripPrefix: false
+      sensitiveHeaders: 
+      serviceId: jpetstore
     product_categories:
       path: /categories/**
       stripPrefix: false
@@ -44,16 +23,30 @@ zuul:
       path: /items/**
       stripPrefix: false
       serviceId: product
-
+    order_orders:
+      path: /orders/**
+      stripPrefix: false
+      serviceId: order
 hystrix:
   command:
     default:
-      execution.isolation.thread.timeoutInMilliseconds: 5000
+      execution.isolation.thread.timeoutInMilliseconds: 10000
       circuitBreaker.errorThresholdPercentage: 50
-      circuitBreaker.requestVolumeThreshold: 2
-      metrics.rollingStats.timeInMilliseconds: 10000
+      circuitBreaker.requestVolumeThreshold: 5
+      metrics.rollingStats.timeInMilliseconds: 60000
       circuitBreaker.sleepWindowInMilliseconds: 5000
-
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+    enabled: true
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+  MaxTotalHttpConnections: 200
+  MaxConnectionsPerHost: 100
 management:
   endpoint:
     env:
