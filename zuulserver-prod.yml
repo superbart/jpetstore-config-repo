@@ -6,8 +6,8 @@ feign:
     config:
       default:
         connectTimeout: 5000
-        readTimeout: 2000
-        loggerLevel: FULL
+        readTimeout: 5000
+        loggerLevel: BASIC
   httpclient:
     enabled: true
     maxConnections: 200
@@ -50,10 +50,10 @@ zuul:
 hystrix:
   command:
     default:
-      execution.isolation.thread.timeoutInMilliseconds: 5000
+      execution.isolation.thread.timeoutInMilliseconds: 10000
       circuitBreaker.errorThresholdPercentage: 50
-      circuitBreaker.requestVolumeThreshold: 2
-      metrics.rollingStats.timeInMilliseconds: 10000
+      circuitBreaker.requestVolumeThreshold: 5
+      metrics.rollingStats.timeInMilliseconds: 60000
       circuitBreaker.sleepWindowInMilliseconds: 5000
 
 management:
