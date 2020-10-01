@@ -6,6 +6,11 @@ zuul:
       path: /**
       stripPrefix: false
       sensitiveHeaders: 
+    jpetstore_order:
+      path: /order/**
+      stripPrefix: false
+      sensitiveHeaders: 
+      serviceId: jpetstore
     product_categories:
       path: /categories/**
       stripPrefix: false
