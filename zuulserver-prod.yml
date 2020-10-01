@@ -1,32 +1,5 @@
 server:
   port: ${ZUUL_PORT}
-    
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: BASIC
-  httpclient:
-    enabled: true
-    maxConnections: 200
-    maxConnectionsPerRoute: 100
-    connectionTimerRepeat: 30000
-  hystrix:
-    enabled: true
-
-#jpetstore:
-#  ribbon:
-#    eureka:
-#      enabled: true
-#
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_DEFAULTZONE}
 
 zuul:
   routes:
@@ -47,6 +20,7 @@ zuul:
       stripPrefix: false
       serviceId: product
 
+
 hystrix:
   command:
     default:
@@ -55,6 +29,42 @@ hystrix:
       circuitBreaker.requestVolumeThreshold: 5
       metrics.rollingStats.timeInMilliseconds: 60000
       circuitBreaker.sleepWindowInMilliseconds: 5000
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_DEFAULTZONE}
+    enabled: true
+
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+  MaxTotalHttpConnections: 200
+  MaxConnectionsPerHost: 100
+#  SocketTimeout: 500     # Response 데이터의 packet 들을 받을 때 서로 다른 패킷을 받기 까지의 delay time
+
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: BASIC
+#  httpclient:
+#    enabled: true
+#    maxConnections: 200
+#    maxConnectionsPerRoute: 100
+#    connectionTimerRepeat: 30000
+#  hystrix:
+#    enabled: true
+
+##jpetstore:
+##  ribbon:
+##    eureka:
+##      enabled: true
+##
 
 management:
   endpoint:
