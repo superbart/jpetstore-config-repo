@@ -54,4 +54,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,env,metrics,refresh,bus-refresh,routes,trace
+        include: health,info,env,metrics,refresh,bus-refresh
