@@ -35,11 +35,11 @@ hystrix:
       circuitBreaker.requestVolumeThreshold: 5
       metrics.rollingStats.timeInMilliseconds: 60000
       circuitBreaker.sleepWindowInMilliseconds: 5000
-ribbon:
-  ConnectTimeout: 5000
-  ReadTimeout: 5000
-  MaxTotalHttpConnections: 200
-  MaxConnectionsPerHost: 100
+#ribbon:
+#  ConnectTimeout: 5000
+#  ReadTimeout: 5000
+#  MaxTotalHttpConnections: 200
+#  MaxConnectionsPerHost: 100
 management:
   endpoint:
     env:
