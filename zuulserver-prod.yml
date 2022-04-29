@@ -10,23 +10,23 @@ zuul:
       path: /order/**
       stripPrefix: false
       sensitiveHeaders: 
-      serviceId: jpetstore
+      url: http://jpetstore:15051
     product_categories:
       path: /categories/**
       stripPrefix: false
-      serviceId: product
+      url: http://product:17071
     product_products:
       path: /products/**
       stripPrefix: false
-      serviceId: product
+      url: http://product:17071
     product_items:
       path: /items/**
       stripPrefix: false
-      serviceId: product
+      url: http://product:17071
     order_orders:
       path: /orders/**
       stripPrefix: false
-      serviceId: order
+      url: http://order:16061
 hystrix:
   command:
     default:
@@ -35,13 +35,6 @@ hystrix:
       circuitBreaker.requestVolumeThreshold: 5
       metrics.rollingStats.timeInMilliseconds: 60000
       circuitBreaker.sleepWindowInMilliseconds: 5000
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_DEFAULTZONE}
-    enabled: true
 ribbon:
   ConnectTimeout: 5000
   ReadTimeout: 5000
