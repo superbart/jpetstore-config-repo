@@ -37,6 +37,9 @@ feign:
     connectionTimerRepeat: 30000
   hystrix:
     enabled: true
+  url:
+    order: http://order:16061
+    product: http://product:17071
 
 #ORDER:
 #  ribbon:
