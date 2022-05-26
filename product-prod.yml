@@ -28,9 +28,9 @@ spring:
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_DEFAULTZONE}
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_DEFAULTZONE}
