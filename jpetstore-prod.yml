@@ -38,17 +38,17 @@ feign:
   hystrix:
     enabled: true
 
-ORDER:
-  ribbon:
-    eureka:
-      enabled: true
-#    listOfServers: localhost:16061,localhost:16062
-
-PRODUCT:
-  ribbon:
-    eureka:
-      enabled: true
-#    listOfServers: localhost:17071,localhost:17072
+#ORDER:
+#  ribbon:
+#    eureka:
+#      enabled: true
+##    listOfServers: localhost:16061,localhost:16062
+#
+#PRODUCT:
+#  ribbon:
+#    eureka:
+#      enabled: true
+##    listOfServers: localhost:17071,localhost:17072
 
 eureka:
   instance:
