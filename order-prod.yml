@@ -56,9 +56,9 @@ feign:
 hystrix:
   command:
     default:
-      execution.isolation.thread.timeoutInMilliseconds: 500
+      execution.isolation.thread.timeoutInMilliseconds: 3000
       circuitBreaker.errorThresholdPercentage: 50
-      circuitBreaker.requestVolumeThreshold: 2
+      circuitBreaker.requestVolumeThreshold: 20
       metrics.rollingStats.timeInMilliseconds: 10000
       circuitBreaker.sleepWindowInMilliseconds: 5000
 
