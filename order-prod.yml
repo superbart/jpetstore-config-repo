@@ -36,7 +36,7 @@ feign:
     maxConnectionsPerRoute: 100
     connectionTimerRepeat: 30000
   hystrix:
-    enabled: true
+    enabled: false
   url:
     product: http://product:17071
 
