@@ -6,7 +6,7 @@ server:
   port: ${PRODUCT_PORT}
 
 service:
-  pause: true
+  pause: false
 
 management:
   endpoint:

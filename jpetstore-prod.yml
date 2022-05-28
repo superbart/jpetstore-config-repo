@@ -32,7 +32,7 @@ feign:
     config:
       default:
         connectTimeout: 5000
-        readTimeout: 2000
+        readTimeout: 300000
         loggerLevel: FULL
   httpclient:
     enabled: true
