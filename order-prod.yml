@@ -5,6 +5,10 @@ server:
     accept-count: 50
   port: ${ORDER_PORT}
 
+product:
+  service:
+    url: http://product:17071
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
