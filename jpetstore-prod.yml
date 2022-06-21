@@ -39,7 +39,7 @@ feign:
     config:
       default:
         connectTimeout: 5000
-        readTimeout: 2000
+        readTimeout: 300000
         loggerLevel: FULL
   httpclient:
     enabled: true
@@ -47,7 +47,7 @@ feign:
     maxConnectionsPerRoute: 100
     connectionTimerRepeat: 30000
   hystrix:
-    enabled: true
+    enabled: false
   url:
     order: http://order:16061
     product: http://product:17071
@@ -74,11 +74,14 @@ feign:
 hystrix:
   command:
     default:
-      execution.isolation.thread.timeoutInMilliseconds: 30000
+      execution.isolation.thread.timeoutInMilliseconds: 300000
       circuitBreaker.errorThresholdPercentage: 50
       circuitBreaker.requestVolumeThreshold: 20
       metrics.rollingStats.timeInMilliseconds: 10000
       circuitBreaker.sleepWindowInMilliseconds: 5000
+  threadpool:
+    default:
+      coreSize: 100
 
 management:
   endpoint:

@@ -5,6 +5,9 @@ server:
     accept-count: 50
   port: ${PRODUCT_PORT}
 
+service:
+  pause: false
+
 management:
   endpoint:
     env:
