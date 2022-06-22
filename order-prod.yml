@@ -44,11 +44,11 @@ feign:
   url:
     product: http://product:17071
 
-#PRODUCT:
+#catalog-api:
 #  ribbon:
 #    eureka:
 #      enabled: true
-##    listOfServers: localhost:17071,localhost:17072
+#    listOfServers: product:17071,product2:17071
 
 #eureka:
 #  instance:

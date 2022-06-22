@@ -52,17 +52,17 @@ feign:
     order: http://order:16061
     product: http://product:17071
 
-#ORDER:
+#order-api:
 #  ribbon:
 #    eureka:
 #      enabled: true
-##    listOfServers: localhost:16061,localhost:16062
+#    listOfServers: order:16061,order2:16061
 #
-#PRODUCT:
+#catalog-api:
 #  ribbon:
 #    eureka:
 #      enabled: true
-##    listOfServers: localhost:17071,localhost:17072
+#    listOfServers: product:17071,product2:17071
 
 #eureka:
 #  instance:
