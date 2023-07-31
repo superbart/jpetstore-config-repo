@@ -64,12 +64,12 @@ catalog-api:
      enabled: true
    listOfServers: product:17071
 
-#eureka:
-#  instance:
-#    preferIpAddress: true
-#  client:
-#    serviceUrl:
-#      defaultZone: ${EUREKA_DEFAULTZONE}
+eureka:
+ instance:
+   preferIpAddress: true
+ client:
+   serviceUrl:
+     defaultZone: ${EUREKA_DEFAULTZONE}
 
 hystrix:
   command:
