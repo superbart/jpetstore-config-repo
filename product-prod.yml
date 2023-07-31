@@ -1,7 +1,7 @@
 server:
   tomcat:
     threads:
-      max: 100
+      max: 50
     accept-count: 50
   port: ${PRODUCT_PORT}
 
